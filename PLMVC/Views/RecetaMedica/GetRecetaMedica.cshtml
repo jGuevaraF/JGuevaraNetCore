@@ -1,0 +1,53 @@
+﻿@model ML.RecetaMedica
+@{
+}
+
+<h1 class="text-center">Paciente: @ViewData["nombrePaciente"] @ViewData["apellidoPaterno"] @ViewData["apellidoMaterno"]</h1>
+
+@if(Model.RecetasMedicas != null && Model.RecetasMedicas.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Eliminar Receta</th>
+                    <th class="text-center">Nombre Médico</th>
+                    <th class="text-center">Fecha Consulta</th>
+                    <th class="text-center">Diagnostico</th>
+                    <th class="text-center">Notas Adicionales</th>
+                    <th class="text-center">Editar Receta</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ML.RecetaMedica receta in Model.RecetasMedicas)
+                {
+                    <tr class="text-center align-middle">
+                        <td>
+                            <a class="btn btn-outline-secondary m-1" href="@Url.Action("Delete", "RecetaMedica", new {idPaciente = ViewData["idPaciente"], idReceta = receta.IdReceta,  nombrePaciente = ViewData["nombrePaciente"], apellidoPaterno = ViewData["apellidoPaterno"], apellidoMaterno = ViewData["apellidoMaterno"]})" onclick="return confirm('¿Estás seguro de que deseas eliminar esta Receta?')">
+                                <i class="fa-solid fa-eraser fa-xl" style="color: #050505;"></i>
+                            </a>
+                        </td>
+                        <td class="fs-5">@receta.NombreMedico</td>
+                        <td class="fs-5">@receta.FechaConsulta</td>
+                        <td class="fs-5">@receta.Diagnostico</td>
+                        <td class="fs-5">@receta.NotasAdicionales</td>
+                        <td>
+                            <a class="btn btn-outline-secondary m-1" href="@Url.Action("Form", "RecetaMedica", new {idPaciente = ViewData["idPaciente"], idReceta = receta.IdReceta,  nombrePaciente = ViewData["nombrePaciente"], apellidoPaterno = ViewData["apellidoPaterno"], apellidoMaterno = ViewData["apellidoMaterno"]})">
+                                <i class="fa-solid fa-pen-clip fa-xl" style="color: #000000;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+} else
+{
+    <div class="alert alert-danger text-center" role="alert">
+        No hay recetas
+    </div>
+}
+
+<div class="d-flex justify-content-center">
+    <a class="text-center btn btn-success" href="@Url.Action("Form", "RecetaMedica", new {idPaciente = ViewData["idPaciente"], nombrePaciente = ViewData["nombrePaciente"], apellidoPaterno = ViewData["apellidoPaterno"], apellidoMaterno = ViewData["apellidoMaterno"]})">Agregar Receta</a>
+</div>

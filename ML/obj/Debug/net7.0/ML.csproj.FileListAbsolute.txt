@@ -1,0 +1,13 @@
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\bin\Debug\net7.0\ML.deps.json
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\bin\Debug\net7.0\ML.dll
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\bin\Debug\net7.0\ML.pdb
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.AssemblyInfoInputs.cache
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.AssemblyInfo.cs
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.csproj.CoreCompileInputs.cache
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.dll
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\refint\ML.dll
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.pdb
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ref\ML.dll
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\bin\Debug\net7.0\ML.runtimeconfig.json
+C:\Users\digis\OneDrive\Documentos\Jorge Guevara Flores\JGuevaraNetCore\ML\obj\Debug\net7.0\ML.genruntimeconfig.cache

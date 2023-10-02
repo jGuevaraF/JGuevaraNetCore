@@ -1,0 +1,62 @@
+﻿@model ML.RecetaMedica
+@{
+}
+
+@using (Html.BeginForm("Form", "RecetaMedica", FormMethod.Post, new { enctype = "multipart/form-data", @class = "container" }))
+{
+    @Html.HiddenFor(model => model.IdReceta);
+    @Html.HiddenFor(model => model.Paciente.IdPaciente);
+    @Html.HiddenFor(model => model.Paciente.Nombre);
+    @Html.HiddenFor(model => model.Paciente.ApellidoPaterno);
+    @Html.HiddenFor(model => model.Paciente.ApellidoMaterno);
+
+    <h2 class="text-center">Registro de Receta</h2>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="mb-3">
+            <label class="d-flex justify-content-center mb-2">
+                <i class="fa-solid fa-user-nurse fa-xl" style="color: #000000;"></i> Nombre del Médico
+            </label>
+            <div class="d-flex justify-content-center mb-2">
+                @Html.TextBoxFor(model => model.NombreMedico, new { @class = "form-control" })
+            </div>
+
+            <label class="d-flex justify-content-center mb-2">
+                <i class="fa-solid fa-calendar-days fa-xl" style="color: #000000;"></i> Fecha de la consulta
+            </label>
+            <div class="d-flex justify-content-center mb-2">
+                @Html.TextBoxFor(model => model.FechaConsulta, new { @class = "form-control", @placeholder = "dd-mm-yyyy"})
+            </div>
+
+            <label class="d-flex justify-content-center mb-2">
+                <i class="fa-solid fa-notes-medical fa-xl" style="color: #000000;"></i> Diagnóstico
+            </label>
+
+            <textarea name="Diagnostico"> @Model.Diagnostico </textarea>
+
+            <label class="d-flex justify-content-center mb-2">
+                <i class="fa-solid fa-comment-medical fa-xl" style="color: #000000;"></i> Notas Adicionales
+            </label>
+
+            <textarea name="NotasAdicionales"> @Model.NotasAdicionales </textarea>
+
+        </div>
+
+
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6 text-center">
+            <button type="submit" class="btn btn-success" id="botonGuardar">
+                <span><i class="fa-solid fa-floppy-disk fa-xl" style="color: #000000;" id="iconoGuardar"></i></span>
+                Guardar
+            </button>
+            <a href="@Url.Action("GetRecetaMedica", "RecetaMedica", new {idPaciente = Model.Paciente.IdPaciente, nombrePaciente = Model.Paciente.Nombre, apellidoPaterno = Model.Paciente.ApellidoPaterno, apellidoMaterno = Model.Paciente.ApellidoMaterno})" class="btn btn-secondary" id="btnRegresar">
+                <span><i class="fa-solid fa-rotate-left fa-xl" style="color: #000000;" id="iconoRegresar"></i></span>
+                Regresar
+            </a>
+        </div>
+    </div>
+
+
+}

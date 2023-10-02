@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ML.Paciente
+@{
+}
+
+<h1 class="text-center mb-3">Pacientes</h1>
+
+@if(Model.Pacientes != null)
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Apellido Paterno</th>
+                    <th class="text-center">Apellido Materno</th>
+                    <th class="text-center">Asignar Receta</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ML.Paciente paciente in Model.Pacientes)
+                {
+                    <tr class="text-center align-middle">
+                        <td class="fs-5">@paciente.Nombre</td>
+                        <td class="fs-5">@paciente.ApellidoPaterno</td>
+                        <td class="fs-5">@paciente.ApellidoMaterno</td>
+                        <td>
+                            <a class="btn btn-outline-secondary m-1" href="@Url.Action("GetRecetaMedica", "RecetaMedica", new {idPaciente = paciente.IdPaciente, nombrePaciente = paciente.Nombre, apellidoPaterno = paciente.ApellidoPaterno, apellidoMaterno = paciente.ApellidoMaterno})">
+                                <i class="fas fa-plus fa-lg" style="color: #000;"></i>
+                              </a>
+                          </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    
+} else
+{
+    <div class="alert alert-danger" role="alert">
+        No hay pacientes
+    </div>
+}
+
+<script>
+
+</script>
